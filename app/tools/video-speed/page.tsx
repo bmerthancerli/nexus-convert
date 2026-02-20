@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoSpeedPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function VideoSpeedPage() {
 
   return (
     <ToolPageLayout
-      title="Video Hızlandırma"
-      subtitle="Videoyu 2x hızda oynatılacak şekilde dönüştürün."
+title="Video Speed Up"
+  subtitle="Convert video to play at 2x speed."
       headerLabel="Video Speed"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }

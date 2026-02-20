@@ -15,7 +15,7 @@ function isAudioFile(file: File): boolean {
 export default function VolumeBoosterPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isAudioFile(file)) return "Lütfen ses dosyası yükleyin (MP3, WAV, M4A, OGG, FLAC).";
+    if (!isAudioFile(file)) return "Please upload an audio file (MP3, WAV, M4A, OGG, FLAC).";
     return null;
   }, []);
 
@@ -38,13 +38,13 @@ export default function VolumeBoosterPage() {
 
   return (
     <ToolPageLayout
-      title="Ses Yükseltici"
-      subtitle="Ses dosyanızın seviyesini 2x artırın."
+title="Volume Booster"
+  subtitle="Increase your audio file volume by 2x."
       headerLabel="Volume Booster"
       accept=".mp3,.wav,.m4a,.ogg,.flac,audio/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Ses dosyanızı buraya sürükleyin"
+      dropHint="Drag your audio file here"
     />
   );
 }

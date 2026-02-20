@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/app/components/footer";
 
 export const metadata = {
-  title: "Hakkımızda | NexusConvert",
-  description: "NexusConvert hakkında. Dosya dönüştürme araçları, gizlilik ve misyonumuz.",
+  title: "About | NexusConvert",
+  description: "About NexusConvert. File conversion tools, privacy and our mission.",
 };
 
 export default function HakkindaPage() {
@@ -16,7 +16,7 @@ export default function HakkindaPage() {
           </Link>
           <nav className="flex gap-4">
             <Link href="/iletisim" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              İletişim
+              Contact
             </Link>
           </nav>
         </div>
@@ -24,49 +24,49 @@ export default function HakkindaPage() {
 
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Hakkımızda</h1>
+          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">About</h1>
 
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-8 text-slate-600 dark:text-slate-300">
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">NexusConvert Nedir?</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">What is NexusConvert?</h2>
               <p>
-                NexusConvert, ses, video ve görsel dosyalarınızı dönüştürmenize yardımcı olan ücretsiz bir çevrimiçi araç platformudur. WAV&apos;dan MP3&apos;e, MP4&apos;ten GIF&apos;e, JPG&apos;den PNG&apos;ye kadar birçok format dönüşümünü tek bir yerden gerçekleştirebilirsiniz.
+                NexusConvert is a free online tool platform that helps you convert your audio, video and image files. You can perform many format conversions in one place, from WAV to MP3, MP4 to GIF, JPG to PNG and more.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Misyonumuz</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Our Mission</h2>
               <p>
-                Kullanıcılarımıza hızlı, kolay ve güvenli dosya dönüştürme deneyimi sunmak. Araçlarımızın büyük çoğunluğu tarayıcıda çalışır; bu sayede dosyalarınız cihazınızda işlenir ve gizliliğiniz korunur.
+                To provide our users with a fast, easy and secure file conversion experience. Most of our tools run in the browser, so your files are processed on your device and your privacy is protected.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Özellikler</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Features</h2>
               <ul className="list-inside list-disc space-y-2">
-                <li>40+ dosya dönüştürme ve düzenleme aracı</li>
-                <li>Ses, video ve görsel formatları için kapsamlı destek</li>
-                <li>Çoğu araçta %100 client-side işleme (dosyalar sunucuya yüklenmez)</li>
-                <li>Yapay zeka destekli arka plan silici</li>
-                <li>Ücretsiz ve reklam destekli kullanım</li>
+                <li>40+ file conversion and editing tools</li>
+                <li>Comprehensive support for audio, video and image formats</li>
+                <li>100% client-side processing for most tools (files are not uploaded to the server)</li>
+                <li>AI-powered background remover</li>
+                <li>Free, ad-supported use</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Teknoloji</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Technology</h2>
               <p>
-                NexusConvert, FFmpeg tabanlı tarayıcı teknolojisi (ffmpeg.wasm) kullanarak dosya işlemlerini doğrudan cihazınızda gerçekleştirir. Arka Plan Silici aracı ise sunucu tarafında yapay zeka modelleri ile çalışır.
+                NexusConvert uses FFmpeg-based browser technology (ffmpeg.wasm) to process files directly on your device. The Background Remover tool runs on the server using AI models.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">İletişim</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Contact</h2>
               <p>
-                Sorularınız, önerileriniz veya geri bildirimleriniz için{" "}
+                For questions, suggestions or feedback, reach us via our{" "}
                 <Link href="/iletisim" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  İletişim
+                  Contact
                 </Link>{" "}
-                sayfamızdan bize ulaşabilirsiniz.
+                page.
               </p>
             </section>
           </div>

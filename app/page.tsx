@@ -45,69 +45,69 @@ const iconMap = {
 const categories = [
   {
     id: "popular",
-    title: "Popüler Araçlar",
+    title: "Popular Tools",
     tools: [
-      { name: "Arka Plan Silici (AI)", path: "/tools/remove-background", desc: "Yapay zeka ile görsel arka planını kaldırın", icon: "Sparkles", color: "from-indigo-500 to-blue-500" },
-      { name: "WAV to MP3", path: "/tools/wav-to-mp3", desc: "Ses dosyalarını MP3 formatına dönüştürün", icon: "Music", color: "from-emerald-500 to-teal-500" },
-      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Videodan MP3 ses çıkarın", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
-      { name: "Video to GIF", path: "/tools/video-to-gif", desc: "Video kliplerden GIF oluşturun", icon: "Film", color: "from-rose-500 to-pink-500" },
-      { name: "Video Hızlandırma", path: "/tools/video-speed", desc: "Videoyu 2x hızda oynatın", icon: "Gauge", color: "from-amber-500 to-orange-500" },
-      { name: "Video Sıkıştır", path: "/tools/video-sikistir", desc: "Video dosya boyutunu küçültün", icon: "Package", color: "from-sky-500 to-blue-500" },
-      { name: "MP4 to WebM", path: "/tools/mp4-to-webm", desc: "MP4 videoyu WebM formatına dönüştürün", icon: "Film", color: "from-violet-500 to-purple-500" },
+      { name: "Background Remover (AI)", path: "/tools/remove-background", desc: "Remove image background with AI", icon: "Sparkles", color: "from-indigo-500 to-blue-500" },
+      { name: "WAV to MP3", path: "/tools/wav-to-mp3", desc: "Convert audio files to MP3", icon: "Music", color: "from-emerald-500 to-teal-500" },
+      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Extract MP3 audio from video", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
+      { name: "Video to GIF", path: "/tools/video-to-gif", desc: "Create GIFs from video clips", icon: "Film", color: "from-rose-500 to-pink-500" },
+      { name: "Video Speed Up", path: "/tools/video-speed", desc: "Play video at 2x speed", icon: "Gauge", color: "from-amber-500 to-orange-500" },
+      { name: "Video Compress", path: "/tools/video-sikistir", desc: "Reduce video file size", icon: "Package", color: "from-sky-500 to-blue-500" },
+      { name: "MP4 to WebM", path: "/tools/mp4-to-webm", desc: "Convert MP4 video to WebM", icon: "Film", color: "from-violet-500 to-purple-500" },
     ],
   },
   {
     id: "audio",
-    title: "Ses Araçları",
+    title: "Audio Tools",
     tools: [
-      { name: "WAV to MP3", path: "/tools/wav-to-mp3", desc: "WAV dosyalarını MP3'e dönüştürün", icon: "Music", color: "from-emerald-500 to-teal-500" },
-      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Videodan MP3 ses çıkarın", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
-      { name: "MP3 Kesici", path: "/tools/mp3-trimmer", desc: "MP3 dosyalarını kesip kısaltın", icon: "Scissors", color: "from-indigo-500 to-slate-600" },
-      { name: "Ses Yükseltici", path: "/tools/volume-booster", desc: "Ses seviyesini artırın", icon: "Volume2", color: "from-sky-500 to-blue-500" },
-      { name: "Ses Birleştirici", path: "/tools/audio-joiner", desc: "Birden fazla ses dosyasını birleştirin", icon: "Layers", color: "from-teal-500 to-cyan-500" },
-      { name: "Ses Dönüştürücü", path: "/tools/audio-converter", desc: "Ses formatlarını dönüştürün", icon: "FileAudio", color: "from-emerald-500 to-teal-500" },
-      { name: "MP3 to WAV", path: "/tools/mp3-to-wav", desc: "MP3 dosyalarını WAV formatına dönüştürün", icon: "Music", color: "from-teal-500 to-cyan-500" },
-      { name: "Ses Sıkıştır", path: "/tools/ses-sikistir", desc: "Ses dosya boyutunu küçültün", icon: "Package", color: "from-sky-500 to-blue-500" },
-      { name: "Ses Fade", path: "/tools/ses-fade", desc: "Başta ve sonda fade in/out efekti", icon: "Volume2", color: "from-indigo-500 to-violet-500" },
+      { name: "WAV to MP3", path: "/tools/wav-to-mp3", desc: "Convert WAV files to MP3", icon: "Music", color: "from-emerald-500 to-teal-500" },
+      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Extract MP3 audio from video", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
+      { name: "MP3 Trimmer", path: "/tools/mp3-trimmer", desc: "Trim and shorten MP3 files", icon: "Scissors", color: "from-indigo-500 to-slate-600" },
+      { name: "Volume Booster", path: "/tools/volume-booster", desc: "Increase audio volume", icon: "Volume2", color: "from-sky-500 to-blue-500" },
+      { name: "Audio Joiner", path: "/tools/audio-joiner", desc: "Merge multiple audio files", icon: "Layers", color: "from-teal-500 to-cyan-500" },
+      { name: "Audio Converter", path: "/tools/audio-converter", desc: "Convert between audio formats", icon: "FileAudio", color: "from-emerald-500 to-teal-500" },
+      { name: "MP3 to WAV", path: "/tools/mp3-to-wav", desc: "Convert MP3 files to WAV", icon: "Music", color: "from-teal-500 to-cyan-500" },
+      { name: "Audio Compress", path: "/tools/ses-sikistir", desc: "Reduce audio file size", icon: "Package", color: "from-sky-500 to-blue-500" },
+      { name: "Audio Fade", path: "/tools/ses-fade", desc: "Fade in/out at start and end", icon: "Volume2", color: "from-indigo-500 to-violet-500" },
     ],
   },
   {
     id: "video",
-    title: "Video Araçları",
+    title: "Video Tools",
     tools: [
-      { name: "Video to GIF", path: "/tools/video-to-gif", desc: "Videodan GIF animasyonu oluşturun", icon: "Film", color: "from-rose-500 to-pink-500" },
-      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Videodan MP3 ses çıkarın", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
-      { name: "Video Kesici", path: "/tools/video-trimmer", desc: "Videoyu kesip kısaltın", icon: "Scissors", color: "from-indigo-500 to-blue-500" },
-      { name: "Video Boyutlandır", path: "/tools/video-resizer", desc: "Video çözünürlüğünü değiştirin", icon: "Maximize2", color: "from-indigo-500 to-blue-500" },
-      { name: "Video to WebP", path: "/tools/video-to-webp", desc: "Videodan WebP görsel çıkarın", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
-      { name: "Videodan Ses Kaldır", path: "/tools/mute-video", desc: "Sessiz video oluşturun", icon: "VideoOff", color: "from-slate-500 to-slate-600" },
-      { name: "Video Hızlandırma", path: "/tools/video-speed", desc: "Videoyu hızlandırın", icon: "Gauge", color: "from-amber-500 to-orange-500" },
-      { name: "Video Sıkıştır", path: "/tools/video-sikistir", desc: "Video boyutunu küçültün", icon: "Package", color: "from-sky-500 to-blue-500" },
-      { name: "MP4 to WebM", path: "/tools/mp4-to-webm", desc: "MP4 videoyu WebM'e dönüştürün", icon: "Film", color: "from-violet-500 to-purple-500" },
-      { name: "Video Birleştirici", path: "/tools/video-birlestirici", desc: "Birden fazla videoyu birleştirin", icon: "Merge", color: "from-indigo-500 to-blue-500" },
-      { name: "Videodan Kare Çıkar", path: "/tools/videodan-kare-cikar", desc: "Videodan PNG kare çıkarın", icon: "Camera", color: "from-rose-500 to-pink-500" },
-      { name: "Görsellerden Video", path: "/tools/gorsellerden-video", desc: "Görsellerden slayt videosu oluşturun", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
-      { name: "Video Yavaşlat", path: "/tools/video-yavaslat", desc: "Videoyu 0.5x hızda oynatın", icon: "Gauge", color: "from-teal-500 to-cyan-500" },
-      { name: "Video Döndür", path: "/tools/video-dondur", desc: "Videoyu 90° döndürün", icon: "RotateCw", color: "from-slate-500 to-slate-600" },
-      { name: "Video Ters Oynat", path: "/tools/video-ters-oynat", desc: "Videoyu tersten oynatın", icon: "RefreshCw", color: "from-cyan-500 to-teal-500" },
-      { name: "Video Kırp", path: "/tools/video-kirp", desc: "Videodan bölge kırpın (crop)", icon: "Maximize2", color: "from-emerald-500 to-teal-500" },
-      { name: "Video Zaman Kesici", path: "/tools/video-zaman-kesici", desc: "Başlangıç-bitiş süresine göre kesin", icon: "Scissors", color: "from-rose-500 to-pink-500" },
-      { name: "Videoya Filigran", path: "/tools/videoya-filigran", desc: "Videoya logo/filigran ekleyin", icon: "ImageIcon", color: "from-slate-500 to-slate-600" },
-      { name: "Video Ayna", path: "/tools/video-ayna", desc: "Yatay veya dikey ayna efekti", icon: "RefreshCw", color: "from-violet-500 to-purple-500" },
-      { name: "Videoya Ses Ekle", path: "/tools/videoya-ses-ekle", desc: "Sessiz videoya ses parçası ekleyin", icon: "Headphones", color: "from-cyan-500 to-blue-500" },
+      { name: "Video to GIF", path: "/tools/video-to-gif", desc: "Create GIF animation from video", icon: "Film", color: "from-rose-500 to-pink-500" },
+      { name: "MP4 to MP3", path: "/tools/mp4-to-mp3", desc: "Extract MP3 audio from video", icon: "Headphones", color: "from-cyan-500 to-teal-500" },
+      { name: "Video Trimmer", path: "/tools/video-trimmer", desc: "Trim and shorten video", icon: "Scissors", color: "from-indigo-500 to-blue-500" },
+      { name: "Video Resizer", path: "/tools/video-resizer", desc: "Change video resolution", icon: "Maximize2", color: "from-indigo-500 to-blue-500" },
+      { name: "Video to WebP", path: "/tools/video-to-webp", desc: "Extract WebP frame from video", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
+      { name: "Mute Video", path: "/tools/mute-video", desc: "Create silent video", icon: "VideoOff", color: "from-slate-500 to-slate-600" },
+      { name: "Video Speed Up", path: "/tools/video-speed", desc: "Speed up video", icon: "Gauge", color: "from-amber-500 to-orange-500" },
+      { name: "Video Compress", path: "/tools/video-sikistir", desc: "Reduce video size", icon: "Package", color: "from-sky-500 to-blue-500" },
+      { name: "MP4 to WebM", path: "/tools/mp4-to-webm", desc: "Convert MP4 to WebM", icon: "Film", color: "from-violet-500 to-purple-500" },
+      { name: "Video Joiner", path: "/tools/video-birlestirici", desc: "Merge multiple videos", icon: "Merge", color: "from-indigo-500 to-blue-500" },
+      { name: "Extract Frame", path: "/tools/videodan-kare-cikar", desc: "Extract PNG frame from video", icon: "Camera", color: "from-rose-500 to-pink-500" },
+      { name: "Images to Video", path: "/tools/gorsellerden-video", desc: "Create slideshow video from images", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
+      { name: "Video Slow Down", path: "/tools/video-yavaslat", desc: "Play video at 0.5x speed", icon: "Gauge", color: "from-teal-500 to-cyan-500" },
+      { name: "Rotate Video", path: "/tools/video-dondur", desc: "Rotate video 90°", icon: "RotateCw", color: "from-slate-500 to-slate-600" },
+      { name: "Reverse Video", path: "/tools/video-ters-oynat", desc: "Play video in reverse", icon: "RefreshCw", color: "from-cyan-500 to-teal-500" },
+      { name: "Video Crop", path: "/tools/video-kirp", desc: "Crop region from video", icon: "Maximize2", color: "from-emerald-500 to-teal-500" },
+      { name: "Video Time Trim", path: "/tools/video-zaman-kesici", desc: "Trim by start and end time", icon: "Scissors", color: "from-rose-500 to-pink-500" },
+      { name: "Video Watermark", path: "/tools/videoya-filigran", desc: "Add logo/watermark to video", icon: "ImageIcon", color: "from-slate-500 to-slate-600" },
+      { name: "Video Mirror", path: "/tools/video-ayna", desc: "Horizontal or vertical mirror effect", icon: "RefreshCw", color: "from-violet-500 to-purple-500" },
+      { name: "Add Audio to Video", path: "/tools/videoya-ses-ekle", desc: "Add audio track to silent video", icon: "Headphones", color: "from-cyan-500 to-blue-500" },
     ],
   },
   {
     id: "image",
-    title: "Görsel Araçları",
+    title: "Image Tools",
     tools: [
-      { name: "JPG to PNG", path: "/tools/jpg-to-png", desc: "JPG görselleri PNG'ye dönüştürün", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
-      { name: "Resim Sıkıştır", path: "/tools/resim-sikistir", desc: "Görsel boyutunu küçültün", icon: "Package", color: "from-lime-500 to-green-500" },
-      { name: "SVG Dönüştürücü", path: "/tools/svg-donusturucu", desc: "SVG formatına dönüştürün", icon: "RefreshCw", color: "from-teal-500 to-cyan-500" },
-      { name: "Görsellerden Video", path: "/tools/gorsellerden-video", desc: "Görsellerden slayt videosu oluşturun", icon: "Film", color: "from-amber-500 to-orange-500" },
-      { name: "Görsel Format Dönüştürücü", path: "/tools/gorsel-format-donusturucu", desc: "PNG, JPG, WebP formatlarına dönüştürün", icon: "RefreshCw", color: "from-teal-500 to-cyan-500" },
-      { name: "Görsel Boyutlandır", path: "/tools/gorsel-boyutlandir", desc: "Görseli yeniden boyutlandırın", icon: "Maximize2", color: "from-lime-500 to-green-500" },
-      { name: "Görsellerden GIF", path: "/tools/gorsellerden-gif", desc: "Görsellerden animasyonlu GIF oluşturun", icon: "Film", color: "from-rose-500 to-pink-500" },
+      { name: "JPG to PNG", path: "/tools/jpg-to-png", desc: "Convert JPG images to PNG", icon: "ImageIcon", color: "from-amber-500 to-orange-500" },
+      { name: "Image Compress", path: "/tools/resim-sikistir", desc: "Reduce image size", icon: "Package", color: "from-lime-500 to-green-500" },
+      { name: "SVG Converter", path: "/tools/svg-donusturucu", desc: "Convert to SVG format", icon: "RefreshCw", color: "from-teal-500 to-cyan-500" },
+      { name: "Images to Video", path: "/tools/gorsellerden-video", desc: "Create slideshow video from images", icon: "Film", color: "from-amber-500 to-orange-500" },
+      { name: "Image Format Converter", path: "/tools/gorsel-format-donusturucu", desc: "Convert to PNG, JPG, WebP", icon: "RefreshCw", color: "from-teal-500 to-cyan-500" },
+      { name: "Image Resizer", path: "/tools/gorsel-boyutlandir", desc: "Resize image", icon: "Maximize2", color: "from-lime-500 to-green-500" },
+      { name: "Images to GIF", path: "/tools/gorsellerden-gif", desc: "Create animated GIF from images", icon: "Film", color: "from-rose-500 to-pink-500" },
     ],
   },
 ];
@@ -148,10 +148,10 @@ export default function ToolsDashboard() {
             </Link>
             <div className="hidden items-center gap-1 sm:flex">
               <Link href="/hakkinda" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
-                Hakkımızda
+                About
               </Link>
               <Link href="/iletisim" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
-                İletişim
+                Contact
               </Link>
             </div>
           </div>
@@ -167,12 +167,12 @@ export default function ToolsDashboard() {
             NexusConvert
           </h1>
           <p className="mt-3 text-xl text-slate-600 dark:text-slate-400 sm:text-2xl">
-            Tüm dosya araçlarınız tek yerde
+            All your file tools in one place
           </p>
 
           {/* Popular searches */}
           <div className="mx-auto mt-5 flex flex-wrap items-center justify-center gap-2">
-            <span className="text-sm text-slate-500 dark:text-slate-400">Popüler Aramalar:</span>
+            <span className="text-sm text-slate-500 dark:text-slate-400">Popular searches:</span>
             {[
               { term: "Resize Image", href: "/tools/resim-sikistir" },
               { term: "PDF to Word", href: "#" },
@@ -209,7 +209,7 @@ export default function ToolsDashboard() {
               </div>
               <input
                 type="search"
-                placeholder="Araç ara... (örn: MP3, PNG, GIF)"
+                placeholder="Search tools... (e.g. MP3, PNG, GIF)"
                 className="block w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-12 pr-4 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500"
               />
             </div>
@@ -217,7 +217,7 @@ export default function ToolsDashboard() {
               type="button"
               className="rounded-xl bg-indigo-600 px-8 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              Ara
+              Search
             </button>
           </div>
         </div>

@@ -58,7 +58,7 @@ export default function VideoyaFiligranPage() {
 
   const handleConvert = useCallback(async () => {
     if (!videoFile || !imageFile) {
-      setError("Video ve filigran görseli yükleyin.");
+      setError("Please upload a video and a watermark image.");
       return;
     }
 
@@ -155,7 +155,7 @@ export default function VideoyaFiligranPage() {
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl">
           <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">Videoya Filigran Ekle</h1>
-          <p className="mb-8 text-slate-600 dark:text-slate-400">Videonuza sağ alt köşede filigran (logo) ekleyin.</p>
+          <p className="mb-8 text-slate-600 dark:text-slate-400">Add a watermark (logo) to the bottom-right corner of your video.</p>
 
           <div className="flex min-h-[280px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50/50 p-6 dark:border-slate-600 dark:bg-slate-800/30">
             {state === "idle" || state === "ready" ? (
@@ -167,7 +167,7 @@ export default function VideoyaFiligranPage() {
                     {videoFile && <p className="mt-1 truncate text-xs text-slate-500">{videoFile.name} ({formatFileSize(videoFile.size)})</p>}
                   </div>
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-400">Filigran (görsel)</label>
+                    <label className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-400">Watermark (image)</label>
                     <input ref={imageRef} type="file" accept=".jpg,.jpeg,.png,.webp,image/*" onChange={handleImageSelect} className="block w-full text-sm text-slate-500 file:mr-4 file:rounded-lg file:border-0 file:bg-indigo-100 file:px-4 file:py-2 file:text-indigo-700 dark:file:bg-indigo-900/40 dark:file:text-indigo-300" />
                     {imageFile && <p className="mt-1 truncate text-xs text-slate-500">{imageFile.name} ({formatFileSize(imageFile.size)})</p>}
                   </div>
@@ -179,7 +179,7 @@ export default function VideoyaFiligranPage() {
             ) : (state === "converting" || isLoadingFFmpeg) ? (
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
-                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "FFmpeg yükleniyor..." : "İşleniyor..."}</p>
+                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "Loading FFmpeg..." : "Processing..."}</p>
                 <div className="mt-6 w-full max-w-xs">
                   <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                     <div className="h-full rounded-full bg-indigo-600 transition-all duration-300" style={{ width: `${progress}%` }} />
@@ -189,8 +189,8 @@ export default function VideoyaFiligranPage() {
               </>
             ) : state === "done" ? (
               <>
-                <p className="font-semibold text-slate-900 dark:text-white">İşlem tamamlandı</p>
-                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">İndir</button>
+                <p className="font-semibold text-slate-900 dark:text-white">Done</p>
+                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">Download</button>
                 <button onClick={handleReset} className="mt-4 text-sm text-slate-500 underline">Yeni dosyalar</button>
               </>
             ) : (
@@ -201,7 +201,7 @@ export default function VideoyaFiligranPage() {
             )}
           </div>
 
-          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Dosyalarınız cihazınızda işlenir.</p>
+          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Your files are processed on your device.</p>
         </div>
       </main>
       <Footer />

@@ -16,7 +16,7 @@ export default function SesFadePage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isAudioFile(file)) return "Lütfen ses dosyası yükleyin (MP3, WAV, M4A).";
+    if (!isAudioFile(file)) return "Please upload an audio file (MP3, WAV, M4A).";
     return null;
   }, []);
 
@@ -50,12 +50,12 @@ export default function SesFadePage() {
   return (
     <ToolPageLayout
       title="Ses Fade"
-      subtitle="Ses dosyasına başta ve sonda fade in/out efekti ekleyin."
+      subtitle="Add fade in/out at the start and end of the audio file."
       headerLabel="Audio Fade"
       accept=".mp3,.wav,.m4a,audio/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Ses dosyanızı buraya sürükleyin"
+      dropHint="Drag your audio file here"
       extraReadyContent={
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div>

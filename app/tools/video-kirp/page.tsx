@@ -18,7 +18,7 @@ export default function VideoKirpPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin.";
+    if (!isVideoFile(file)) return "Please upload a video file.";
     return null;
   }, []);
 
@@ -45,29 +45,29 @@ export default function VideoKirpPage() {
 
   return (
     <ToolPageLayout
-      title="Video Kırp"
-      subtitle="Videodan belirli bölgeyi kırpın (crop). Genişlik, yükseklik ve başlangıç noktası girin."
-      headerLabel="Video Crop"
-      accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
-      validateFile={validateFile}
-      processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+title="Video Crop"
+  subtitle="Crop a region from the video. Enter width, height and start position."
+  headerLabel="Video Crop"
+  accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
+  validateFile={validateFile}
+  processFile={processFile}
+  dropHint="Drag your video file here"
       extraReadyContent={
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Genişlik (px)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Width (px)</label>
             <input type="number" value={width} onChange={(e) => setWidth(e.target.value)} min={1} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Yükseklik (px)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Height (px)</label>
             <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} min={1} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">X (başlangıç)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">X (start)</label>
             <input type="number" value={x} onChange={(e) => setX(e.target.value)} min={0} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Y (başlangıç)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Y (start)</label>
             <input type="number" value={y} onChange={(e) => setY(e.target.value)} min={0} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
         </div>

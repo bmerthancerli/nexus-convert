@@ -16,7 +16,7 @@ export default function GorselBoyutlandirPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isImageFile(file)) return "Lütfen görsel dosyası yükleyin.";
+    if (!isImageFile(file)) return "Please upload an image file.";
     return null;
   }, []);
 
@@ -42,22 +42,22 @@ export default function GorselBoyutlandirPage() {
 
   return (
     <ToolPageLayout
-      title="Görsel Boyutlandır"
-      subtitle="Görseli yeniden boyutlandırın. Genişlik zorunlu, yükseklik boş bırakılırsa orantı korunur."
+title="Image Resizer"
+  subtitle="Resize image. Width is required; if height is left empty, aspect ratio is preserved."
       headerLabel="Image Resize"
       accept=".jpg,.jpeg,.png,.webp,.bmp,image/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Görsel dosyanızı buraya sürükleyin"
+      dropHint="Drag your image here"
       extraReadyContent={
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Genişlik (px)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Width (px)</label>
             <input type="number" value={width} onChange={(e) => setWidth(e.target.value)} min={1} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Yükseklik (px, opsiyonel)</label>
-            <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} min={0} placeholder="Boş = orantılı" className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Height (px, optional)</label>
+            <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} min={0} placeholder="Empty = proportional" className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
         </div>
       }

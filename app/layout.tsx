@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NexusConvert | Tüm Dosya Araçlarınız Tek Yerde",
-  description: "WAV to MP3, JPG to PNG, Video to GIF ve daha fazlası. Tüm dosya dönüştürme araçları tek platformda. %100 gizlilik.",
+  title: "NexusConvert | All Your File Tools in One Place",
+  description: "WAV to MP3, JPG to PNG, Video to GIF and more. All file conversion tools on one platform. 100% privacy.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >

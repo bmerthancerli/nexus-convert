@@ -11,9 +11,9 @@ function isVideoFile(file: File): boolean {
 }
 
 const ROTATIONS = [
-  { value: "90", label: "90° saat yönü", vf: "transpose=1" },
+  { value: "90", label: "90° clockwise", vf: "transpose=1" },
   { value: "180", label: "180°", vf: "transpose=2,transpose=2" },
-  { value: "270", label: "270° saat yönü", vf: "transpose=2" },
+  { value: "270", label: "270° clockwise", vf: "transpose=2" },
 ] as const;
 
 export default function VideoDondurPage() {
@@ -21,7 +21,7 @@ export default function VideoDondurPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -45,16 +45,16 @@ export default function VideoDondurPage() {
 
   return (
     <ToolPageLayout
-      title="Video Döndür"
-      subtitle="Videoyu 90°, 180° veya 270° döndürün."
+title="Rotate Video"
+  subtitle="Rotate video by 90°, 180° or 270°."
       headerLabel="Video Rotate"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
       extraReadyContent={
         <div className="mt-4">
-          <label className="mb-2 block text-sm font-medium text-slate-600 dark:text-slate-400">Dönüş açısı</label>
+          <label className="mb-2 block text-sm font-medium text-slate-600 dark:text-slate-400">Rotation angle</label>
           <select
             value={rotation}
             onChange={(e) => setRotation(e.target.value as "90" | "180" | "270")}

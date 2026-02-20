@@ -21,7 +21,7 @@ export default function GorselFormatDonusturucuPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isImageFile(file)) return "Lütfen görsel dosyası yükleyin (JPG, PNG, WebP, BMP).";
+    if (!isImageFile(file)) return "Please upload an image file (JPG, PNG, WebP, BMP).";
     return null;
   }, []);
 
@@ -52,16 +52,16 @@ export default function GorselFormatDonusturucuPage() {
 
   return (
     <ToolPageLayout
-      title="Görsel Format Dönüştürücü"
-      subtitle="Görselleri PNG, JPG veya WebP formatına dönüştürün."
+title="Image Format Converter"
+  subtitle="Convert images to PNG, JPG or WebP format."
       headerLabel="Image Format"
       accept=".jpg,.jpeg,.png,.webp,.bmp,image/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Görsel dosyanızı buraya sürükleyin"
+      dropHint="Drag your image here"
       extraReadyContent={
         <div className="mt-4">
-          <label className="mb-2 block text-sm font-medium text-slate-600 dark:text-slate-400">Çıktı formatı</label>
+          <label className="mb-2 block text-sm font-medium text-slate-600 dark:text-slate-400">Output format</label>
           <select value={format} onChange={(e) => setFormat(e.target.value as typeof format)} className="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white">
             {OUTPUT_FORMATS.map((f) => (
               <option key={f.value} value={f.value}>{f.label}</option>

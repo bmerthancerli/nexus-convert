@@ -11,7 +11,7 @@ function isMp4File(file: File): boolean {
 export default function Mp4ToWebmPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isMp4File(file)) return "Lütfen MP4 dosyası yükleyin.";
+    if (!isMp4File(file)) return "Please upload an MP4 file.";
     return null;
   }, []);
 
@@ -33,12 +33,12 @@ export default function Mp4ToWebmPage() {
   return (
     <ToolPageLayout
       title="MP4 to WebM"
-      subtitle="MP4 videoyu WebM formatına dönüştürün. Web için optimize."
+      subtitle="Convert MP4 video to WebM format. Optimized for web."
       headerLabel="MP4 to WebM"
       accept=".mp4,.m4v,video/mp4"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="MP4 dosyanızı buraya sürükleyin"
+      dropHint="Drag your MP4 file here"
     />
   );
 }

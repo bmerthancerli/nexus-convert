@@ -14,14 +14,14 @@ export async function POST(request: NextRequest) {
 
     if (!file) {
       return NextResponse.json(
-        { error: "Görsel dosyası bulunamadı." },
+        { error: "Image file not found." },
         { status: 400 }
       );
     }
 
     if (file.size > MAX_BYTES) {
       return NextResponse.json(
-        { error: `Dosya çok büyük. Maksimum ${MAX_SIZE_MB} MB desteklenir.` },
+        { error: `File is too large. Maximum ${MAX_SIZE_MB} MB is supported.` },
         { status: 400 }
       );
     }
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     });
   } catch (err) {
     console.error("remove-bg error:", err);
-    const message = err instanceof Error ? err.message : "Arka plan kaldırma sırasında bir hata oluştu.";
+    const message = err instanceof Error ? err.message : "An error occurred while removing the background.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

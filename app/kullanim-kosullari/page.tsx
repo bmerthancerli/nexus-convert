@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/app/components/footer";
 
 export const metadata = {
-  title: "Kullanım Koşulları | NexusConvert",
-  description: "NexusConvert kullanım koşulları. Hizmet şartları ve kullanıcı yükümlülükleri.",
+  title: "Terms of Use | NexusConvert",
+  description: "NexusConvert terms of use. Service terms and user obligations.",
 };
 
 export default function KullanimKosullariPage() {
@@ -16,10 +16,10 @@ export default function KullanimKosullariPage() {
           </Link>
           <nav className="flex gap-4">
             <Link href="/hakkinda" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              Hakkımızda
+              About
             </Link>
             <Link href="/iletisim" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              İletişim
+              Contact
             </Link>
           </nav>
         </div>
@@ -27,69 +27,68 @@ export default function KullanimKosullariPage() {
 
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Kullanım Koşulları</h1>
-          <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Son güncelleme: Şubat 2025</p>
+          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Terms of Use</h1>
+          <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Last updated: February 2025</p>
 
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-8 text-slate-600 dark:text-slate-300">
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">1. Hizmetin Kapsamı</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">1. Scope of Service</h2>
               <p>
-                NexusConvert, çevrimiçi dosya dönüştürme araçları sunan bir web platformudur. Bu hizmetler, ses, video, görsel ve diğer dosya formatlarının dönüştürülmesini içerir. Hizmetlerimizi kullanarak bu Kullanım Koşullarını kabul etmiş sayılırsınız.
+                NexusConvert is a web platform that provides online file conversion tools. These services include conversion of audio, video, image and other file formats. By using our services you agree to these Terms of Use.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">2. Kullanım Kuralları</h2>
-              <p>Sitemizi ve araçlarımızı kullanırken aşağıdaki kurallara uymanız gerekmektedir:</p>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">2. Rules of Use</h2>
+              <p>When using our site and tools you must comply with the following rules:</p>
               <ul className="mt-2 list-inside list-disc space-y-1">
-                <li>Yasalara aykırı amaçlarla kullanım yasaktır.</li>
-                <li>Telif hakkı, ticari marka veya başkalarının fikri mülkiyet haklarını ihlal eden içeriklerin yüklenmesi yasaktır.</li>
-                <li>Zararlı yazılım, virüs veya kötü niyetli kod içeren dosyaların yüklenmesi yasaktır.</li>
-                <li>Sistemi aşırı yükleyecek veya bozacak otomatik istekler (bot, scraping vb.) göndermek yasaktır.</li>
-                <li>Hizmetimizi başkalarına zarar vermek amacıyla kullanmak yasaktır.</li>
+                <li>Use for illegal purposes is prohibited.</li>
+                <li>Uploading content that infringes copyright, trademark or other intellectual property rights is prohibited.</li>
+                <li>Uploading files containing malware, viruses or malicious code is prohibited.</li>
+                <li>Sending automated requests (bots, scraping, etc.) that overload or disrupt the system is prohibited.</li>
+                <li>Using our service to harm others is prohibited.</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">3. Sorumluluk Reddi</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">3. Disclaimer</h2>
               <p>
-                NexusConvert, &quot;olduğu gibi&quot; (as is) sunulmaktadır. Hizmetlerimizin kesintisiz, hatasız veya güvenli olduğunu garanti etmiyoruz. Dosya dönüştürme işlemlerinin sonuçlarından veya olası veri kaybından sorumlu tutulamayız. Önemli dosyalarınız için mutlaka yedek almanızı öneririz.
+                NexusConvert is provided &quot;as is&quot;. We do not guarantee that our services are uninterrupted, error-free or secure. We cannot be held responsible for the results of file conversion or possible data loss. We recommend that you always keep backups of important files.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">4. Dosya ve Gizlilik</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">4. Files and Privacy</h2>
               <p>
-                Çoğu aracımızda dosyalarınız yalnızca tarayıcınızda (cihazınızda) işlenir ve sunucularımıza aktarılmaz. Arka Plan Silici (AI) aracı istisnadır; bu araçta görseller geçici olarak sunucumuzda işlenir. Detaylı bilgi için{" "}
+                For most of our tools, your files are processed only in your browser (on your device) and are not sent to our servers. The Background Remover (AI) tool is an exception; images are processed temporarily on our server. For details, see our{" "}
                 <Link href="/gizlilik-politikasi" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  Gizlilik Politikamızı
-                </Link>{" "}
-                inceleyebilirsiniz.
+                  Privacy Policy
+                </Link>.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">5. Hizmet Değişiklikleri</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">5. Changes to Service</h2>
               <p>
-                NexusConvert, hizmetleri önceden bildirimde bulunmaksızın değiştirme, güncelleme veya sonlandırma hakkını saklı tutar. Bu değişiklikler bu sayfada yayınlanacaktır.
+                NexusConvert reserves the right to change, update or discontinue services without prior notice. Such changes will be published on this page.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">6. Uygulanacak Hukuk</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">6. Governing Law</h2>
               <p>
-                Bu Kullanım Koşulları Türkiye Cumhuriyeti kanunlarına tabidir. Uyuşmazlıklarda yetkili mahkemeler ve icra daireleri Türkiye mahkemeleridir.
+                These Terms of Use are governed by applicable law. Disputes shall be subject to the courts of competent jurisdiction.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">7. İletişim</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">7. Contact</h2>
               <p>
-                Sorularınız için{" "}
+                For questions, you can reach us via our{" "}
                 <Link href="/iletisim" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  İletişim
+                  Contact
                 </Link>{" "}
-                sayfamızdan bize ulaşabilirsiniz.
+                page.
               </p>
             </section>
           </div>

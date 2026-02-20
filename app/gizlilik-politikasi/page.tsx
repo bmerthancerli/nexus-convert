@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/app/components/footer";
 
 export const metadata = {
-  title: "Gizlilik Politikası | NexusConvert",
-  description: "NexusConvert gizlilik politikası. Çerezler, veri toplama ve kullanıcı gizliliği hakkında bilgiler.",
+  title: "Privacy Policy | NexusConvert",
+  description: "NexusConvert privacy policy. Cookies, data collection and user privacy.",
 };
 
 export default function GizlilikPolitikasiPage() {
@@ -16,10 +16,10 @@ export default function GizlilikPolitikasiPage() {
           </Link>
           <nav className="flex gap-4">
             <Link href="/hakkinda" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              Hakkımızda
+              About
             </Link>
             <Link href="/iletisim" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              İletişim
+              Contact
             </Link>
           </nav>
         </div>
@@ -27,79 +27,78 @@ export default function GizlilikPolitikasiPage() {
 
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-3xl">
-          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Gizlilik Politikası</h1>
-          <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Son güncelleme: Şubat 2025</p>
+          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
+          <p className="mb-6 text-sm text-slate-500 dark:text-slate-400">Last updated: February 2025</p>
 
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-8 text-slate-600 dark:text-slate-300">
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">1. Giriş</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">1. Introduction</h2>
               <p>
-                NexusConvert (&quot;biz&quot;, &quot;bizim&quot; veya &quot;site&quot;) olarak kullanıcı gizliliğinize önem veriyoruz. Bu Gizlilik Politikası, sitemizi ziyaret ettiğinizde veya hizmetlerimizi kullandığınızda toplanan bilgilerin nasıl işlendiğini açıklamaktadır.
+                At NexusConvert (&quot;we&quot;, &quot;us&quot; or &quot;the site&quot;) we value your privacy. This Privacy Policy explains how we handle information collected when you visit our site or use our services.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">2. Toplanan Bilgiler</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">2. Information We Collect</h2>
               <p>
-                NexusConvert büyük ölçüde tarayıcı tabanlı (client-side) dosya dönüştürme araçları sunar. Yüklediğiniz dosyalar, çoğu araçta doğrudan cihazınızda işlenir ve sunucularımıza aktarılmaz. Bunun istisnası Arka Plan Silici (AI) aracıdır; bu araçta gönderdiğiniz görsel, arka plan kaldırma işlemi için geçici olarak sunucumuzda işlenir.
+                NexusConvert largely offers browser-based (client-side) file conversion tools. Files you upload are processed directly on your device for most tools and are not sent to our servers. The exception is the Background Remover (AI) tool, where the image you submit is processed temporarily on our server for background removal.
               </p>
               <p className="mt-3">
-                Otomatik olarak toplanan bilgiler: IP adresi, tarayıcı türü, işletim sistemi, ziyaret edilen sayfalar, ziyaret süresi ve benzeri teknik veriler.
+                Information collected automatically: IP address, browser type, operating system, pages visited, visit duration and similar technical data.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">3. Çerezler (Cookies)</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">3. Cookies</h2>
               <p>
-                Sitemiz, deneyiminizi iyileştirmek ve hizmetlerimizi analiz etmek amacıyla çerezler kullanabilir. Kullandığımız çerez türleri:
+                Our site may use cookies to improve your experience and analyze our services. Types of cookies we use:
               </p>
               <ul className="mt-2 list-inside list-disc space-y-1">
-                <li><strong>Zorunlu çerezler:</strong> Sitenin temel işlevlerini sağlamak için gereklidir.</li>
-                <li><strong>Analitik çerezler:</strong> Ziyaretçi sayısı ve sayfa kullanımını anlamak için (Google Analytics gibi).</li>
-                <li><strong>Reklam çerezleri:</strong> Google AdSense veya benzeri reklam ağları, size ilgili reklamlar göstermek için çerez kullanabilir.</li>
+                <li><strong>Essential cookies:</strong> Required for basic site functionality.</li>
+                <li><strong>Analytics cookies:</strong> To understand visitor numbers and page usage (e.g. Google Analytics).</li>
+                <li><strong>Advertising cookies:</strong> Google AdSense or similar ad networks may use cookies to show you relevant ads.</li>
               </ul>
               <p className="mt-3">
-                Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz; ancak bu durumda sitenin bazı özellikleri düzgün çalışmayabilir.
+                You can disable cookies in your browser settings; however, some features of the site may not work properly.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">4. Google AdSense ve Reklamlar</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">4. Google AdSense and Advertising</h2>
               <p>
-                Sitemizde Google AdSense reklamları yayınlanabilir. Google, kullanıcılarına daha uygun reklamlar sunmak için çerezler ve benzeri teknolojiler kullanır. Google&apos;un reklam ve gizlilik politikaları hakkında daha fazla bilgi için{" "}
+                Our site may display Google AdSense ads. Google uses cookies and similar technologies to show more relevant ads. For more on Google&apos;s advertising and privacy policies, see{" "}
                 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  Google Reklam Politikası
+                  Google Advertising Policy
                 </a>{" "}
-                ve{" "}
+                and{" "}
                 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  Google Gizlilik Politikası
-                </a>{" "}
-                sayfalarını inceleyebilirsiniz.
+                  Google Privacy Policy
+                </a>.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">5. Verilerin Korunması</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">5. Data Protection</h2>
               <p>
-                Topladığımız verileri yetkisiz erişime, kayba veya değişikliğe karşı korumak için makul güvenlik önlemleri uyguluyoruz. Dosya dönüştürme işlemlerinin büyük çoğunluğu cihazınızda gerçekleştiği için, yüklediğiniz dosyalar sunucularımıza aktarılmaz.
+                We take reasonable security measures to protect the data we collect from unauthorized access, loss or alteration. Since most file conversion happens on your device, uploaded files are not transferred to our servers.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">6. Üçüncü Taraflarla Paylaşım</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">6. Sharing with Third Parties</h2>
               <p>
-                Kişisel verilerinizi, yasal zorunluluklar dışında üçüncü taraflarla satmayız veya kiralamayız. Google Analytics, Google AdSense gibi hizmet sağlayıcılar kendi gizlilik politikalarına tabidir.
+                We do not sell or rent your personal data to third parties except where required by law. Service providers such as Google Analytics and Google AdSense are subject to their own privacy policies.
               </p>
             </section>
 
             <section>
-              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">7. İletişim</h2>
+              <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">7. Contact</h2>
               <p>
-                Gizlilik politikanızla ilgili sorularınız için{" "}
+                For questions about this privacy policy, you can reach us via our{" "}
                 <Link href="/iletisim" className="text-indigo-600 hover:underline dark:text-indigo-400">
-                  İletişim
+                  Contact
                 </Link>{" "}
-                sayfamızdan bize ulaşabilirsiniz.
+                page.
               </p>
             </section>
           </div>

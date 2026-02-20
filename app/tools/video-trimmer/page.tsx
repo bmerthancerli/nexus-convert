@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoTrimmerPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function VideoTrimmerPage() {
 
   return (
     <ToolPageLayout
-      title="Video Kesici (Trimmer)"
-      subtitle="Videonun ilk 60 saniyesini çıkarın."
+title="Video Trimmer"
+  subtitle="Trim the first 60 seconds of the video."
       headerLabel="Video Trimmer"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }

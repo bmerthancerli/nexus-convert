@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoYavaslatPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function VideoYavaslatPage() {
 
   return (
     <ToolPageLayout
-      title="Video Yavaşlat"
-      subtitle="Videoyu 0.5x hızda (yavaş çekim) oynatın."
+title="Video Slow Down"
+  subtitle="Play video at 0.5x speed (slow motion)."
       headerLabel="Video Slow Motion"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }

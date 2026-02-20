@@ -21,7 +21,7 @@ export default function VideoAynaPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin.";
+    if (!isVideoFile(file)) return "Please upload a video file.";
     return null;
   }, []);
 
@@ -44,13 +44,13 @@ export default function VideoAynaPage() {
 
   return (
     <ToolPageLayout
-      title="Video Ayna"
-      subtitle="Videoyu yatay veya dikey ayna efekti uygulayın."
+title="Video Mirror"
+  subtitle="Apply horizontal or vertical mirror effect to the video."
       headerLabel="Video Mirror"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
       extraReadyContent={
         <div className="mt-4">
           <label className="mb-2 block text-sm font-medium text-slate-600 dark:text-slate-400">Ayna tipi</label>

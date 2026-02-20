@@ -50,12 +50,12 @@ export default function RemoveBackgroundPage() {
     const f = e.dataTransfer.files[0];
     if (!f) return;
     if (f.size > MAX_BYTES) {
-      setError(`Dosya çok büyük. Maksimum ${MAX_MB} MB desteklenir.`);
+      setError(`File is too large. Maximum ${MAX_MB} MB is supported.`);
       setState("error");
       return;
     }
     if (!isImageFile(f)) {
-      setError("Lütfen görsel dosyası yükleyin (JPG, PNG, WebP).");
+      setError("Please upload an image file (JPG, PNG, WebP).");
       setState("error");
       return;
     }
@@ -75,12 +75,12 @@ export default function RemoveBackgroundPage() {
     const f = e.target.files?.[0];
     if (!f) return;
     if (f.size > MAX_BYTES) {
-      setError(`Dosya çok büyük. Maksimum ${MAX_MB} MB desteklenir.`);
+      setError(`File is too large. Maximum ${MAX_MB} MB is supported.`);
       setState("error");
       return;
     }
     if (!isImageFile(f)) {
-      setError("Lütfen görsel dosyası yükleyin (JPG, PNG, WebP).");
+      setError("Please upload an image file (JPG, PNG, WebP).");
       setState("error");
       return;
     }
@@ -105,14 +105,14 @@ export default function RemoveBackgroundPage() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "İşlem başarısız oldu.");
+        throw new Error(data.error || "Processing failed.");
       }
 
       const blob = await res.blob();
       setResultBlob(blob);
       setState("done");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Bir hata oluştu.");
+      setError(err instanceof Error ? err.message : "An error occurred.");
       setState("error");
     }
   }, [file]);
@@ -177,7 +177,7 @@ export default function RemoveBackgroundPage() {
             Arka Plan Silici (AI)
           </h1>
           <p className="mb-8 text-slate-600 dark:text-slate-400">
-            Yapay zeka ile görselinizin arka planını temizleyin. Şeffaf PNG olarak indirin.
+            Remove the background from your image with AI. Download as transparent PNG.
           </p>
 
           <div
@@ -203,8 +203,8 @@ export default function RemoveBackgroundPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Görsel dosyanızı buraya sürükleyin</p>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">veya tıklayarak seçin</p>
+                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Drag your image here</p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">or click to select</p>
               </>
             )}
 
@@ -221,7 +221,7 @@ export default function RemoveBackgroundPage() {
                   onClick={(e) => { e.stopPropagation(); handleProcess(); }}
                   className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                  Arka Planı Kaldır
+                  Remove Background
                 </button>
               </>
             )}
@@ -229,7 +229,7 @@ export default function RemoveBackgroundPage() {
             {state === "processing" && (
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
-                <p className="font-medium text-slate-700 dark:text-slate-300">Yapay Zeka Arka Planı Temizliyor...</p>
+                <p className="font-medium text-slate-700 dark:text-slate-300">AI is removing the background...</p>
               </>
             )}
 
@@ -240,7 +240,7 @@ export default function RemoveBackgroundPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="font-semibold text-slate-900 dark:text-white">İşlem tamamlandı</p>
+                <p className="font-semibold text-slate-900 dark:text-white">Done</p>
                 <button
                   onClick={handleDownload}
                   className="mt-6 flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -248,13 +248,13 @@ export default function RemoveBackgroundPage() {
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  İndir
+                  Download
                 </button>
                 <button
                   onClick={handleReset}
                   className="mt-4 text-sm text-slate-500 underline hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
                 >
-                  Yeni dosya yükle
+                  Upload new file
                 </button>
               </>
             )}
@@ -278,7 +278,7 @@ export default function RemoveBackgroundPage() {
           </div>
 
           <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
-            Dosyalarınız sunucuda işlenir. Gizlilik politikanıza uygun şekilde saklanır.
+            Your files are processed on the server. They are stored in accordance with our privacy policy.
           </p>
         </div>
       </main>

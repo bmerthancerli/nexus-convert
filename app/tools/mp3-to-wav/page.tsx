@@ -12,7 +12,7 @@ function isMp3File(file: File): boolean {
 export default function Mp3ToWavPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isMp3File(file)) return "Lütfen MP3 dosyası yükleyin.";
+    if (!isMp3File(file)) return "Please upload an MP3 file.";
     return null;
   }, []);
 
@@ -34,12 +34,12 @@ export default function Mp3ToWavPage() {
   return (
     <ToolPageLayout
       title="MP3 to WAV"
-      subtitle="MP3 dosyalarını WAV formatına dönüştürün."
-      headerLabel="MP3 to WAV"
-      accept=".mp3,audio/mpeg"
-      validateFile={validateFile}
-      processFile={processFile}
-      dropHint="MP3 dosyanızı buraya sürükleyin"
+subtitle="Convert MP3 files to WAV format."
+  headerLabel="MP3 to WAV"
+  accept=".mp3,audio/mpeg"
+  validateFile={validateFile}
+  processFile={processFile}
+  dropHint="Drag your MP3 file here"
     />
   );
 }

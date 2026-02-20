@@ -12,7 +12,7 @@ function isMp3File(file: File): boolean {
 export default function Mp3TrimmerPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isMp3File(file)) return "Lütfen sadece MP3 dosyası yükleyin.";
+    if (!isMp3File(file)) return "Please upload an MP3 file only.";
     return null;
   }, []);
 
@@ -34,12 +34,12 @@ export default function Mp3TrimmerPage() {
   return (
     <ToolPageLayout
       title="MP3 Kesici (Trimmer)"
-      subtitle="MP3 dosyanızın ilk 60 saniyesini çıkarın."
+      subtitle="Trim the first 60 seconds of your MP3 file."
       headerLabel="MP3 Trimmer"
       accept=".mp3,audio/mpeg"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="MP3 dosyanızı buraya sürükleyin"
+      dropHint="Drag your MP3 file here"
     />
   );
 }

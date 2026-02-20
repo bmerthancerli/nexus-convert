@@ -14,7 +14,7 @@ function isImageFile(file: File): boolean {
 export default function ResimSikistirPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isImageFile(file)) return "Lütfen görsel dosyası yükleyin (JPG, PNG, WebP).";
+    if (!isImageFile(file)) return "Please upload an image file (JPG, PNG, WebP).";
     return null;
   }, []);
 
@@ -37,13 +37,13 @@ export default function ResimSikistirPage() {
 
   return (
     <ToolPageLayout
-      title="Resim Sıkıştır"
-      subtitle="Görsel boyutunu küçültün, dosya sıkıştırın."
-      headerLabel="Resim Sıkıştır"
+title="Image Compress"
+  subtitle="Reduce image size, compress files."
+  headerLabel="Image Compress"
       accept=".jpg,.jpeg,.png,.webp,image/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Görsel dosyanızı buraya sürükleyin"
+      dropHint="Drag your image here"
     />
   );
 }

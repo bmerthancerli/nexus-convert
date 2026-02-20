@@ -80,7 +80,7 @@ export default function GorsellerdenGifPage() {
 
   const handleConvert = useCallback(async () => {
     if (files.length < 1) {
-      setError("En az 1 görsel ekleyin.");
+      setError("Add at least 1 image.");
       return;
     }
 
@@ -138,7 +138,7 @@ export default function GorsellerdenGifPage() {
       setState("done");
     } catch (err) {
       setIsLoadingFFmpeg(false);
-      setError(getFFmpegErrorMessage(err, "görsel"));
+      setError(getFFmpegErrorMessage(err, "image"));
       setState("error");
     }
   }, [files, delay]);
@@ -176,7 +176,7 @@ export default function GorsellerdenGifPage() {
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href="/" className="text-lg font-semibold text-slate-900 dark:text-white">NexusConvert</Link>
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Görsellerden GIF</span>
+            <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Images to GIF</span>
             <NavAuth />
           </div>
         </div>
@@ -184,8 +184,8 @@ export default function GorsellerdenGifPage() {
 
       <main {...dropZoneProps} className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl">
-          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">Görsellerden GIF</h1>
-          <p className="mb-8 text-slate-600 dark:text-slate-400">Birden fazla görselden animasyonlu GIF oluşturun.</p>
+          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">Images to GIF</h1>
+          <p className="mb-8 text-slate-600 dark:text-slate-400">Create an animated GIF from multiple images.</p>
 
           <div
             onClick={() => (state === "idle" || state === "ready" ? inputRef.current?.click() : undefined)}
@@ -199,7 +199,7 @@ export default function GorsellerdenGifPage() {
 
             {state === "idle" && (
               <>
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Görsellerinizi sürükleyin veya tıklayın</p>
+                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Drag your images here or click to select</p>
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">JPG, PNG, WebP, BMP</p>
               </>
             )}
@@ -210,7 +210,7 @@ export default function GorsellerdenGifPage() {
                   {files.map((f, i) => (
                     <div key={i} className="flex items-center justify-between rounded-lg bg-white px-3 py-2 dark:bg-slate-800">
                       <span className="truncate text-sm text-slate-700 dark:text-slate-300">{f.name}</span>
-                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(i); }} className="text-red-500 hover:text-red-700">Kaldır</button>
+                      <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(i); }} className="text-red-500 hover:text-red-700">Remove</button>
                     </div>
                   ))}
                 </div>
@@ -223,7 +223,7 @@ export default function GorsellerdenGifPage() {
                   disabled={files.length < 1}
                   className="mt-4 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
                 >
-                  GIF Oluştur
+                  Create GIF
                 </button>
                 <button onClick={(e) => { e.stopPropagation(); inputRef.current?.click(); }} className="mt-2 text-sm text-slate-500 underline">Daha fazla ekle</button>
               </>
@@ -232,7 +232,7 @@ export default function GorsellerdenGifPage() {
             {(state === "converting" || isLoadingFFmpeg) && (
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
-                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "FFmpeg yükleniyor..." : "Oluşturuluyor..."}</p>
+                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "Loading FFmpeg..." : "Creating..."}</p>
                 <div className="mt-6 w-full max-w-xs">
                   <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                     <div className="h-full rounded-full bg-indigo-600 transition-all duration-300" style={{ width: `${progress}%` }} />
@@ -244,9 +244,9 @@ export default function GorsellerdenGifPage() {
 
             {state === "done" && (
               <>
-                <p className="font-semibold text-slate-900 dark:text-white">İşlem tamamlandı</p>
-                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">İndir</button>
-                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 underline">Yeni dosyalar yükle</button>
+                <p className="font-semibold text-slate-900 dark:text-white">Done</p>
+                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">Download</button>
+                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 underline">Upload new files</button>
               </>
             )}
 
@@ -258,7 +258,7 @@ export default function GorsellerdenGifPage() {
             )}
           </div>
 
-          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Dosyalarınız cihazınızda işlenir.</p>
+          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Your files are processed on your device.</p>
         </div>
       </main>
       <Footer />

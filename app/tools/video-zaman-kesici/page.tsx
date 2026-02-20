@@ -16,7 +16,7 @@ export default function VideoZamanKesiciPage() {
 
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin.";
+    if (!isVideoFile(file)) return "Please upload a video file.";
     return null;
   }, []);
 
@@ -42,21 +42,21 @@ export default function VideoZamanKesiciPage() {
 
   return (
     <ToolPageLayout
-      title="Video Zaman Kesici"
-      subtitle="Başlangıç ve bitiş süresine göre videoyu kesin. Örn: 0 ile 60 = ilk 60 saniye."
+title="Video Time Trim"
+  subtitle="Trim video by start and end time. E.g. 0 to 60 = first 60 seconds."
       headerLabel="Video Trim"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
       extraReadyContent={
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Başlangıç (saniye)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Start (seconds)</label>
             <input type="number" value={startTime} onChange={(e) => setStartTime(e.target.value)} min={0} step={0.1} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">Bitiş (saniye)</label>
+            <label className="mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400">End (seconds)</label>
             <input type="number" value={endTime} onChange={(e) => setEndTime(e.target.value)} min={0} step={0.1} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-white" />
           </div>
         </div>

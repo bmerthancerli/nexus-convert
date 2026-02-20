@@ -22,7 +22,7 @@ export function NavAuth() {
           onClick={() => signOut({ callbackUrl: "/" })}
           className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
         >
-          Çıkış Yap
+          Sign Out
         </button>
       </div>
     );
@@ -34,13 +34,13 @@ export function NavAuth() {
         href="/giris"
         className="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
       >
-        Giriş Yap
+        Sign In
       </Link>
       <Link
         href="/kayit"
         className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
       >
-        Kayıt Ol
+        Sign Up
       </Link>
     </div>
   );

@@ -13,7 +13,7 @@ function isAudioFile(file: File): boolean {
 export default function SesSikistirPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isAudioFile(file)) return "Lütfen ses dosyası yükleyin (MP3, WAV, M4A, OGG).";
+    if (!isAudioFile(file)) return "Please upload an audio file (MP3, WAV, M4A, OGG).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function SesSikistirPage() {
 
   return (
     <ToolPageLayout
-      title="Ses Sıkıştır"
-      subtitle="Ses dosya boyutunu küçültün (96 kbps MP3)."
+title="Audio Compress"
+  subtitle="Reduce audio file size (96 kbps MP3)."
       headerLabel="Audio Compressor"
       accept=".mp3,.wav,.m4a,.ogg,audio/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Ses dosyanızı buraya sürükleyin"
+      dropHint="Drag your audio file here"
     />
   );
 }

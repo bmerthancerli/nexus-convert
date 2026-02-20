@@ -18,7 +18,7 @@ const MAX_FILE_SIZE_MB = 100;
 export function checkFileSize(file: File, maxMB = MAX_FILE_SIZE_MB): string | null {
   const maxBytes = maxMB * 1024 * 1024;
   if (file.size > maxBytes) {
-    return `Dosya çok büyük. Maksimum ${maxMB} MB desteklenir.`;
+    return `File is too large. Maximum ${maxMB} MB is supported.`;
   }
   return null;
 }
@@ -26,12 +26,12 @@ export function checkFileSize(file: File, maxMB = MAX_FILE_SIZE_MB): string | nu
 export function getFFmpegErrorMessage(err: unknown, formatName: string): string {
   const msg = err instanceof Error ? err.message : String(err);
   if (msg.includes("SharedArrayBuffer") || msg.includes("cross-origin"))
-    return "Tarayıcı uyumsuzluğu. Lütfen Chrome veya Edge kullanın ve sayfayı yenileyin.";
+    return "Browser not supported. Please use Chrome or Edge and refresh the page.";
   if (msg.includes("fetch") || msg.includes("network") || msg.includes("Failed to fetch"))
-    return "İnternet bağlantısını kontrol edin. FFmpeg yüklenirken hata oluştu.";
+    return "Check your internet connection. Error while loading FFmpeg.";
   if (msg.includes("Invalid") || msg.includes("format"))
-    return `Geçersiz dosya formatı. Lütfen geçerli bir ${formatName} dosyası yükleyin.`;
-  return msg || "İşlem sırasında bir hata oluştu.";
+    return `Invalid file format. Please upload a valid ${formatName} file.`;
+  return msg || "An error occurred during processing.";
 }
 
 export interface ToolPageProps {
@@ -281,7 +281,7 @@ export function ToolPageLayout({
                   {defaultIcon}
                 </div>
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-300">{dropHint}</p>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">veya tıklayarak seçin</p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">or click to select</p>
               </>
             )}
 
@@ -302,7 +302,7 @@ export function ToolPageLayout({
                   }}
                   className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                  Dönüştür
+                  Convert
                 </button>
               </>
             )}
@@ -311,7 +311,7 @@ export function ToolPageLayout({
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
                 <p className="font-medium text-slate-700 dark:text-slate-300">
-                  {isLoadingFFmpeg ? "FFmpeg yükleniyor..." : "İşleniyor..."}
+                  {isLoadingFFmpeg ? "Loading FFmpeg..." : "Processing..."}
                 </p>
                 <div className="mt-6 w-full max-w-xs">
                   <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
@@ -332,7 +332,7 @@ export function ToolPageLayout({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="font-semibold text-slate-900 dark:text-white">İşlem tamamlandı</p>
+                <p className="font-semibold text-slate-900 dark:text-white">Done</p>
                 <button
                   onClick={handleDownload}
                   className="mt-6 flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -340,13 +340,13 @@ export function ToolPageLayout({
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  İndir
+                  Download
                 </button>
                 <button
                   onClick={handleReset}
                   className="mt-4 text-sm text-slate-500 underline hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
                 >
-                  Yeni dosya yükle
+                  Upload new file
                 </button>
               </>
             )}
@@ -366,14 +366,14 @@ export function ToolPageLayout({
                   }}
                   className="mt-6 rounded-xl border border-slate-300 bg-white px-6 py-2.5 font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
                 >
-                  Tekrar Dene
+                  Try again
                 </button>
               </>
             )}
           </div>
 
           <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
-            Dosyalarınız hiçbir sunucuya yüklenmez, cihazınızda işlenir.
+            Your files are not uploaded to any server; they are processed on your device.
           </p>
         </div>
       </main>

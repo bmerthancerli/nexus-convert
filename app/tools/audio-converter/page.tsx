@@ -13,7 +13,7 @@ function isAudioFile(file: File): boolean {
 export default function AudioConverterPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isAudioFile(file)) return "Lütfen ses dosyası yükleyin (MP3, WAV, M4A, OGG, FLAC).";
+    if (!isAudioFile(file)) return "Please upload an audio file (MP3, WAV, M4A, OGG, FLAC).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function AudioConverterPage() {
 
   return (
     <ToolPageLayout
-      title="Ses Dönüştürücü"
-      subtitle="Ses dosyalarını MP3 formatına dönüştürün."
+      title="Audio Converter"
+      subtitle="Convert audio files to MP3 format."
       headerLabel="Audio Converter"
       accept=".mp3,.wav,.m4a,.ogg,.flac,audio/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Ses dosyanızı buraya sürükleyin"
+      dropHint="Drag your audio file here"
     />
   );
 }

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Footer } from "@/app/components/footer";
 
 export const metadata = {
-  title: "İletişim | NexusConvert",
-  description: "NexusConvert iletişim. Sorularınız ve geri bildirimleriniz için bize ulaşın.",
+  title: "Contact | NexusConvert",
+  description: "Contact NexusConvert. Reach us for questions and feedback.",
 };
 
 export default function IletisimPage() {
@@ -16,7 +16,7 @@ export default function IletisimPage() {
           </Link>
           <nav className="flex gap-4">
             <Link href="/hakkinda" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-              Hakkımızda
+              About
             </Link>
           </nav>
         </div>
@@ -24,17 +24,17 @@ export default function IletisimPage() {
 
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl">
-          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">İletişim</h1>
+          <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">Contact</h1>
 
           <div className="space-y-8">
             <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800/50">
-              <h2 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">Bize Ulaşın</h2>
+              <h2 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">Get in Touch</h2>
               <p className="mb-6 text-slate-600 dark:text-slate-400">
-                Sorularınız, önerileriniz, teknik destek talepleriniz veya iş birliği önerileriniz için aşağıdaki e-posta adresinden bize ulaşabilirsiniz.
+                For questions, suggestions, technical support or partnership inquiries, you can reach us at the email address below.
               </p>
               <div className="flex flex-col gap-4">
                 <div>
-                  <span className="block text-sm font-medium text-slate-500 dark:text-slate-400">E-posta</span>
+                  <span className="block text-sm font-medium text-slate-500 dark:text-slate-400">Email</span>
                   <a
                     href="mailto:info@nexusconvert.com"
                     className="text-lg font-medium text-indigo-600 hover:underline dark:text-indigo-400"
@@ -42,29 +42,29 @@ export default function IletisimPage() {
                     info@nexusconvert.com
                   </a>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    Yanıt süresi genellikle 1-3 iş günüdür.
+                    Response time is typically 1–3 business days.
                   </p>
                 </div>
               </div>
             </section>
 
             <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800/50">
-              <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Sık Sorulan Konular</h2>
+              <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
               <ul className="space-y-3 text-slate-600 dark:text-slate-400">
                 <li>
-                  <strong className="text-slate-700 dark:text-slate-300">Dosyalarım güvende mi?</strong>
+                  <strong className="text-slate-700 dark:text-slate-300">Are my files safe?</strong>
                   <br />
-                  Çoğu araçta dosyalar cihazınızda işlenir, sunucularımıza yüklenmez. Arka Plan Silici aracı istisnadır.
+                  For most tools, files are processed on your device and are not uploaded to our servers. The Background Remover tool is an exception.
                 </li>
                 <li>
-                  <strong className="text-slate-700 dark:text-slate-300">Hizmet ücretsiz mi?</strong>
+                  <strong className="text-slate-700 dark:text-slate-300">Is the service free?</strong>
                   <br />
-                  Evet, tüm araçlar ücretsizdir. Reklamlar ile desteklenmektedir.
+                  Yes, all tools are free. The site is supported by ads.
                 </li>
                 <li>
-                  <strong className="text-slate-700 dark:text-slate-300">Maksimum dosya boyutu?</strong>
+                  <strong className="text-slate-700 dark:text-slate-300">Maximum file size?</strong>
                   <br />
-                  Araçlara göre değişir; genellikle 50-100 MB aralığındadır.
+                  It varies by tool; typically 50–100 MB.
                 </li>
               </ul>
             </section>

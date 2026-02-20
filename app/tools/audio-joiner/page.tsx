@@ -80,7 +80,7 @@ export default function AudioJoinerPage() {
 
   const handleConvert = useCallback(async () => {
     if (files.length < 2) {
-      setError("En az 2 ses dosyası ekleyin.");
+      setError("Add at least 2 audio files.");
       return;
     }
 
@@ -168,7 +168,7 @@ export default function AudioJoinerPage() {
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href="/" className="text-lg font-semibold text-slate-900 dark:text-white">NexusConvert</Link>
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Ses Birleştirici</span>
+            <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Audio Joiner</span>
             <NavAuth />
           </div>
         </div>
@@ -176,8 +176,8 @@ export default function AudioJoinerPage() {
 
       <main {...dropZoneProps} className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl">
-          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">Ses Birleştirici</h1>
-          <p className="mb-8 text-slate-600 dark:text-slate-400">Birden fazla ses dosyasını tek MP3 dosyasında birleştirin. MP3, WAV, M4A desteklenir.</p>
+          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">Audio Joiner</h1>
+          <p className="mb-8 text-slate-600 dark:text-slate-400">Merge multiple audio files into one MP3. MP3, WAV, M4A supported.</p>
 
           <div
             onClick={() => (state === "idle" || state === "ready" ? inputRef.current?.click() : undefined)}
@@ -191,7 +191,7 @@ export default function AudioJoinerPage() {
 
             {state === "idle" && (
               <>
-                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Ses dosyalarınızı sürükleyin veya tıklayın</p>
+                <p className="text-lg font-medium text-slate-700 dark:text-slate-300">Drag your audio files here or click to select</p>
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">En az 2 ses (MP3, WAV, M4A)</p>
               </>
             )}
@@ -204,7 +204,7 @@ export default function AudioJoinerPage() {
                       <span className="truncate text-sm text-slate-700 dark:text-slate-300">{f.name}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-slate-500">{formatFileSize(f.size)}</span>
-                        <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(i); }} className="text-red-500 hover:text-red-700">Kaldır</button>
+                        <button type="button" onClick={(e) => { e.stopPropagation(); removeFile(i); }} className="text-red-500 hover:text-red-700">Remove</button>
                       </div>
                     </div>
                   ))}
@@ -214,7 +214,7 @@ export default function AudioJoinerPage() {
                   disabled={files.length < 2}
                   className="mt-4 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:opacity-50"
                 >
-                  Birleştir
+                  Merge
                 </button>
                 <button onClick={(e) => { e.stopPropagation(); inputRef.current?.click(); }} className="mt-2 text-sm text-slate-500 underline">Daha fazla ekle</button>
               </>
@@ -223,7 +223,7 @@ export default function AudioJoinerPage() {
             {(state === "converting" || isLoadingFFmpeg) && (
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
-                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "FFmpeg yükleniyor..." : "Birleştiriliyor..."}</p>
+                <p className="font-medium text-slate-700 dark:text-slate-300">{isLoadingFFmpeg ? "Loading FFmpeg..." : "Merging..."}</p>
                 <div className="mt-6 w-full max-w-xs">
                   <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                     <div className="h-full rounded-full bg-indigo-600 transition-all duration-300" style={{ width: `${progress}%` }} />
@@ -235,9 +235,9 @@ export default function AudioJoinerPage() {
 
             {state === "done" && (
               <>
-                <p className="font-semibold text-slate-900 dark:text-white">İşlem tamamlandı</p>
-                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">İndir</button>
-                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 underline">Yeni dosyalar yükle</button>
+                <p className="font-semibold text-slate-900 dark:text-white">Done</p>
+                <button onClick={handleDownload} className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white hover:bg-indigo-700">Download</button>
+                <button onClick={handleReset} className="mt-4 text-sm text-slate-500 underline">Upload new files</button>
               </>
             )}
 
@@ -249,7 +249,7 @@ export default function AudioJoinerPage() {
             )}
           </div>
 
-          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Dosyalarınız cihazınızda işlenir.</p>
+          <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">Your files are processed on your device.</p>
         </div>
       </main>
       <Footer />

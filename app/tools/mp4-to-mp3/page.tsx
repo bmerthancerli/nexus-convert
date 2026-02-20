@@ -58,7 +58,7 @@ export default function Mp4ToMp3Page() {
         setMp3Blob(null);
         setProgress(0);
       } else {
-        setError("Lütfen sadece MP4 dosyası yükleyin.");
+        setError("Please upload an MP4 file only.");
         setState("error");
       }
     },
@@ -86,7 +86,7 @@ export default function Mp4ToMp3Page() {
         setMp3Blob(null);
         setProgress(0);
       } else if (selectedFile) {
-        setError("Lütfen sadece MP4 dosyası yükleyin.");
+        setError("Please upload an MP4 file only.");
         setState("error");
       }
     },
@@ -96,12 +96,12 @@ export default function Mp4ToMp3Page() {
   const getErrorMessage = useCallback((err: unknown): string => {
     const msg = err instanceof Error ? err.message : String(err);
     if (msg.includes("SharedArrayBuffer") || msg.includes("cross-origin"))
-      return "Tarayıcı uyumsuzluğu. Lütfen Chrome veya Edge kullanın ve sayfayı yenileyin.";
+      return "Browser not supported. Please use Chrome or Edge and refresh the page.";
     if (msg.includes("fetch") || msg.includes("network") || msg.includes("Failed to fetch"))
-      return "İnternet bağlantısını kontrol edin. FFmpeg yüklenirken hata oluştu.";
+      return "Check your internet connection. Error while loading FFmpeg.";
     if (msg.includes("Invalid") || msg.includes("format"))
-      return "Geçersiz dosya formatı. Lütfen geçerli bir MP4 dosyası yükleyin.";
-    return msg || "Dönüştürme sırasında bir hata oluştu.";
+      return "Invalid file format. Please upload a valid MP4 file.";
+    return msg || "An error occurred during conversion.";
   }, []);
 
   const handleConvert = useCallback(async () => {
@@ -220,10 +220,10 @@ export default function Mp4ToMp3Page() {
       <main {...dropZoneProps} className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-2xl">
           <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
-            MP4 to MP3 Dönüştürücü
+            MP4 to MP3 Converter
           </h1>
           <p className="mb-8 text-slate-600 dark:text-slate-400">
-            MP4 videodan ses ayıklayıp MP3 formatına dönüştürün. Tarayıcıda anında işlenir.
+            Extract audio from MP4 video and convert to MP3. Processed instantly in the browser.
           </p>
 
           <div
@@ -263,9 +263,9 @@ export default function Mp4ToMp3Page() {
                   </svg>
                 </div>
                 <p className="text-lg font-medium text-slate-700 dark:text-slate-300">
-                  MP4 dosyanızı buraya sürükleyin
+                  Drag your MP4 file here
                 </p>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">veya tıklayarak seçin</p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">or click to select</p>
               </>
             )}
 
@@ -297,7 +297,7 @@ export default function Mp4ToMp3Page() {
                   }}
                   className="mt-6 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                  MP3&apos;e Dönüştür
+                  Convert to MP3
                 </button>
               </>
             )}
@@ -306,7 +306,7 @@ export default function Mp4ToMp3Page() {
               <>
                 <div className="mb-6 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 dark:border-slate-600 dark:border-t-indigo-400" />
                 <p className="font-medium text-slate-700 dark:text-slate-300">
-                  {isLoadingFFmpeg ? "FFmpeg yükleniyor..." : "Dönüştürülüyor..."}
+                  {isLoadingFFmpeg ? "Loading FFmpeg..." : "Converting..."}
                 </p>
                 <div className="mt-6 w-full max-w-xs">
                   <div className="h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
@@ -332,7 +332,7 @@ export default function Mp4ToMp3Page() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="font-semibold text-slate-900 dark:text-white">Dönüştürme tamamlandı</p>
+                <p className="font-semibold text-slate-900 dark:text-white">Conversion complete</p>
                 <button
                   onClick={handleDownload}
                   className="mt-6 flex items-center gap-2 rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white shadow-sm transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -345,13 +345,13 @@ export default function Mp4ToMp3Page() {
                       d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
                     />
                   </svg>
-                  İndir
+                  Download
                 </button>
                 <button
                   onClick={handleReset}
                   className="mt-4 text-sm text-slate-500 underline hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
                 >
-                  Yeni dosya yükle
+                  Upload new file
                 </button>
               </>
             )}
@@ -383,7 +383,7 @@ export default function Mp4ToMp3Page() {
           </div>
 
           <p className="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
-            Dosyalarınız hiçbir sunucuya yüklenmez, cihazınızda işlenir.
+            Your files are not uploaded to any server; they are processed on your device.
           </p>
         </div>
       </main>

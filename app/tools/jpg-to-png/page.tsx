@@ -14,7 +14,7 @@ function isImageFile(file: File): boolean {
 export default function JpgToPngPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isImageFile(file)) return "Lütfen görsel dosyası yükleyin (JPG, PNG, WebP).";
+    if (!isImageFile(file)) return "Please upload an image file (JPG, PNG, WebP).";
     return null;
   }, []);
 
@@ -38,12 +38,12 @@ export default function JpgToPngPage() {
   return (
     <ToolPageLayout
       title="JPG to PNG"
-      subtitle="Görselleri PNG formatına dönüştürün."
+      subtitle="Convert images to PNG format."
       headerLabel="JPG to PNG"
       accept=".jpg,.jpeg,.png,.webp,image/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Görsel dosyanızı buraya sürükleyin"
+      dropHint="Drag your image here"
     />
   );
 }

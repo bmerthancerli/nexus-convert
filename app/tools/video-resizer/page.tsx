@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoResizerPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function VideoResizerPage() {
 
   return (
     <ToolPageLayout
-      title="Video Boyutlandır"
-      subtitle="Videoyu 640px genişliğe yeniden boyutlandırın."
+title="Video Resizer"
+  subtitle="Resize video to 640px width."
       headerLabel="Video Resizer"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }

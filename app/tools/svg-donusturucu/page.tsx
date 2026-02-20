@@ -13,7 +13,7 @@ function isImageFile(file: File): boolean {
 export default function SvgDonusturucuPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isImageFile(file)) return "Lütfen raster görsel yükleyin (JPG, PNG, WebP, BMP).";
+    if (!isImageFile(file)) return "Please upload a raster image (JPG, PNG, WebP, BMP).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function SvgDonusturucuPage() {
 
   return (
     <ToolPageLayout
-      title="Görsel Dönüştürücü"
-      subtitle="Görselleri PNG formatına dönüştürün."
-      headerLabel="SVG Dönüştürücü"
+title="Image Converter"
+  subtitle="Convert images to PNG format."
+  headerLabel="SVG Converter"
       accept=".jpg,.jpeg,.png,.webp,.bmp,image/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Görsel dosyanızı buraya sürükleyin"
+      dropHint="Drag your image here"
     />
   );
 }

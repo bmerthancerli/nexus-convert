@@ -8,14 +8,14 @@ export async function POST(request: NextRequest) {
 
     if (!email || !password || !name) {
       return NextResponse.json(
-        { error: "E-posta, şifre ve ad soyad zorunludur." },
+        { error: "Email, password and full name are required." },
         { status: 400 }
       );
     }
 
     if (password.length < 6) {
       return NextResponse.json(
-        { error: "Şifre en az 6 karakter olmalıdır." },
+        { error: "Password must be at least 6 characters." },
         { status: 400 }
       );
     }
@@ -24,13 +24,13 @@ export async function POST(request: NextRequest) {
     const isDemo = DEMO_USERS.some((u) => u.email === normalizedEmail);
     if (isDemo) {
       return NextResponse.json(
-        { error: "Bu e-posta demo hesabına aittir. Giriş sayfasını kullanın." },
+        { error: "This email is a demo account. Please use the sign in page." },
         { status: 400 }
       );
     }
     if (registeredUsers.has(normalizedEmail)) {
       return NextResponse.json(
-        { error: "Bu e-posta adresi zaten kayıtlı." },
+        { error: "This email address is already registered." },
         { status: 400 }
       );
     }
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
-      { error: "Bir hata oluştu." },
+      { error: "An error occurred." },
       { status: 500 }
     );
   }

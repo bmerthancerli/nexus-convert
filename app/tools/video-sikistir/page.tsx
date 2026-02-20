@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoSikistirPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -36,13 +36,13 @@ export default function VideoSikistirPage() {
 
   return (
     <ToolPageLayout
-      title="Video Sıkıştır"
-      subtitle="Video dosya boyutunu küçültün, kaliteyi koruyun."
+title="Video Compress"
+  subtitle="Reduce video file size while preserving quality."
       headerLabel="Video Compressor"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }

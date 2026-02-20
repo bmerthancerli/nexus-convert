@@ -26,14 +26,14 @@ function GirisForm() {
         redirect: false,
       });
       if (result?.error) {
-        setError("E-posta veya şifre hatalı. Lütfen tekrar deneyin.");
+        setError("Invalid email or password. Please try again.");
         setLoading(false);
         return;
       }
       router.push(callbackUrl);
       router.refresh();
     } catch {
-      setError("Bir hata oluştu. Lütfen tekrar deneyin.");
+      setError("An error occurred. Please try again.");
     }
     setLoading(false);
   };
@@ -46,16 +46,16 @@ function GirisForm() {
             NexusConvert
           </Link>
           <Link href="/kayit" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">
-            Kayıt Ol
+            Sign Up
           </Link>
         </div>
       </header>
 
       <main className="relative px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-md">
-          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">Giriş Yap</h1>
+          <h1 className="mb-2 text-2xl font-bold text-slate-900 dark:text-white">Sign In</h1>
           <p className="mb-8 text-slate-600 dark:text-slate-400">
-            NexusConvert hesabınızla giriş yapın.
+            Sign in with your NexusConvert account.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800/50">
@@ -66,7 +66,7 @@ function GirisForm() {
             )}
             <div>
               <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                E-posta
+                Email
               </label>
               <input
                 id="email"
@@ -76,12 +76,12 @@ function GirisForm() {
                 required
                 autoComplete="email"
                 className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500"
-                placeholder="ornek@email.com"
+                placeholder="example@email.com"
               />
             </div>
             <div>
               <label htmlFor="password" className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                Şifre
+                Password
               </label>
               <input
                 id="password"
@@ -98,17 +98,17 @@ function GirisForm() {
               disabled={loading}
               className="w-full rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
             >
-              {loading ? "Giriş yapılıyor..." : "Giriş Yap"}
+              {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
 
           <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
-            Demo hesap: demo@nexusconvert.com / demo123
+            Demo account: demo@nexusconvert.com / demo123
           </p>
 
           <p className="mt-4 text-center">
             <Link href="/kayit" className="text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400">
-              Hesabınız yok mu? Kayıt olun
+              Don&apos;t have an account? Sign up
             </Link>
           </p>
         </div>

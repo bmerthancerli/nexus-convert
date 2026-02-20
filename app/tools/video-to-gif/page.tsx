@@ -13,7 +13,7 @@ function isVideoFile(file: File): boolean {
 export default function VideoToGifPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file, 50)) return checkFileSize(file, 50)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -37,12 +37,12 @@ export default function VideoToGifPage() {
   return (
     <ToolPageLayout
       title="Video to GIF"
-      subtitle="Videodan GIF animasyonu oluşturun."
-      headerLabel="Video to GIF"
-      accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
-      validateFile={validateFile}
-      processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+subtitle="Create a GIF animation from video."
+  headerLabel="Video to GIF"
+  accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
+  validateFile={validateFile}
+  processFile={processFile}
+  dropHint="Drag your video file here"
     />
   );
 }

@@ -15,7 +15,7 @@ function isVideoFile(file: File): boolean {
 export default function MuteVideoPage() {
   const validateFile = useCallback((file: File): string | null => {
     if (checkFileSize(file)) return checkFileSize(file)!;
-    if (!isVideoFile(file)) return "Lütfen video dosyası yükleyin (MP4, WebM, AVI, MOV, MKV).";
+    if (!isVideoFile(file)) return "Please upload a video file (MP4, WebM, AVI, MOV, MKV).";
     return null;
   }, []);
 
@@ -38,13 +38,13 @@ export default function MuteVideoPage() {
 
   return (
     <ToolPageLayout
-      title="Videodan Ses Kaldır"
-      subtitle="Videodan ses kanalını kaldırın, sessiz video oluşturun."
+title="Mute Video"
+  subtitle="Remove the audio track from the video to create a silent video."
       headerLabel="Mute Video"
       accept=".mp4,.webm,.avi,.mov,.mkv,video/*"
       validateFile={validateFile}
       processFile={processFile}
-      dropHint="Video dosyanızı buraya sürükleyin"
+      dropHint="Drag your video file here"
     />
   );
 }
