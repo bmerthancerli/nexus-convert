@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NexusConvert | All Your File Tools in One Place",
   description: "WAV to MP3, JPG to PNG, Video to GIF and more. All file conversion tools on one platform. 100% privacy.",
+  metadataBase: new URL("https://nexusconvert.net"),
 };
 
 export default function RootLayout({
