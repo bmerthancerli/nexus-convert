@@ -98,6 +98,17 @@ const categories = [
     ],
   },
   {
+    id: "ffmpeg",
+    title: "FFmpeg Tools",
+    tools: [
+      { name: "AVI to MP4", path: "/tools/avi-to-mp4", desc: "Convert AVI video to MP4 with FFmpeg", icon: "Film", color: "from-blue-500 to-indigo-500" },
+      { name: "MKV to MP4", path: "/tools/mkv-to-mp4", desc: "Convert MKV video to MP4 format", icon: "Film", color: "from-rose-500 to-red-500" },
+      { name: "FLAC to MP3", path: "/tools/flac-to-mp3", desc: "Convert lossless FLAC audio to MP3", icon: "Music", color: "from-amber-500 to-orange-500" },
+      { name: "OGG to MP3", path: "/tools/ogg-to-mp3", desc: "Convert OGG Vorbis audio to MP3", icon: "Headphones", color: "from-emerald-500 to-teal-500" },
+      { name: "MOV to MP4", path: "/tools/mov-to-mp4", desc: "Convert QuickTime MOV to MP4", icon: "Film", color: "from-violet-500 to-purple-500" },
+    ],
+  },
+  {
     id: "image",
     title: "Image Tools",
     tools: [
