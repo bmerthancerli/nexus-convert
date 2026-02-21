@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "NexusConvert | All Your File Tools in One Place",
   description: "WAV to MP3, JPG to PNG, Video to GIF and more. All file conversion tools on one platform. 100% privacy.",
   metadataBase: new URL("https://nexusconvert.net"),
+  openGraph: { title: "NexusConvert | All Your File Tools in One Place", description: "WAV to MP3, JPG to PNG, Video to GIF and more." },
 };
 
 export default function RootLayout({
